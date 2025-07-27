@@ -109,6 +109,12 @@ class ACO:
         num_ants: int,
     ) -> Tuple[List[str], float]:
         """Finds the shortest path from the source to the destination in the graph
+         valid_ants = [ant for ant in ants if ant.valid]
+if valid_ants:
+    best_ant_cost = min(ant.cost for ant in valid_ants)
+    self.convergence_curve.append(best_ant_cost)
+else:
+    self.convergence_curve.append(None)  # if no valid solution
 
         Args:
             source (str): The source node in the graph
